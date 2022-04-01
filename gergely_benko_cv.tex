@@ -1,0 +1,121 @@
+% Fill me
+\newcommand{\phonenr}{ -- SECRET -- }
+
+\documentclass[10pt]{article}
+\usepackage{array, xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage[english,magyar,portuguese]{babel}
+\usepackage{mathpazo}
+\usepackage[a4paper, left=2cm, right=2cm, top=0cm, bottom=1cm]{geometry}
+\usepackage{trimspaces}
+\usepackage{xspace}
+\input{dictionary.tex}
+
+\graphicspath{ {./assets/} }
+\definecolor{lightgray}{gray}{0.8}
+
+\newcolumntype{L}{>{\raggedleft}p{0.2\textwidth}}
+\newcolumntype{R}{p{0.76\textwidth}}
+
+\newcommand{\langen}[1]{\ifen\selectlanguage{english}#1\xspace\fi}
+\newcommand{\langhu}[1]{\ifhu\selectlanguage{magyar}#1\xspace\fi}
+\newcommand{\langpt}[1]{\ifpt\selectlanguage{portuguese}#1\xspace\fi}
+
+
+\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+\newcommand{\roundpic}[4][]{
+  \tikz\node [circle, minimum width = #2,
+    path picture = {
+      \node [#1] at (path picture bounding box.center) {
+        \includegraphics[width=#3]{#4}};
+    }] {};}
+
+
+\linespread{1.0}
+\pagenumbering{gobble}
+\usepackage[pdftex,
+  pdfauthor={Gergely Benko},
+  pdftitle={Gergely Benko - CV},
+  pdfsubject={CV}
+]{hyperref}
+\title{\bfseries\Huge Gergely Benkő\vspace{-16mm}}
+\date{}
+\begin{document}
+\maketitle
+
+%----------------- PERSONAL DETAILS -------------------
+\begin{wrapfigure}[2]{r}{0.2\textwidth}
+    \begin{center}
+        \vspace{-40pt}
+        \roundpic[xshift=0.2cm,yshift=-0.5cm]{0.2\textwidth}{0.25\textwidth}{me}
+    \end{center}
+\end{wrapfigure}
+
+\section*{\textsc{\pdata{}}}
+    \begin{tabular}{rl}
+        \textsc{\birthdataheader{}}:& Zirc, \country{}, \birtdate{}\\
+        \textsc{\address{}}:& Veszprém 8200, \country{}\\
+        \textsc{\phone{}}:& \phonenr{}\\
+        \textsc{Email}:& gergely.benko93@gmail.com\\
+    \end{tabular}
+
+%----------------- WORK EXPERIENCE ----------------------
+\section*{\textsc{\workexp{}}}
+  \begin{tabular}{L!{\VRule}R}
+    04/2021--{\present{}}& {\bf One Identity} (\softwareengineer{})\\
+    &\begin{itemize}
+      \vspace{-5mm}
+      \setlength\itemsep{0em}
+        \item \oiitemone{}
+        \item \oiitemtwo{}
+    \end{itemize}\\
+    06/2020--04/2021& Continental (\softwareengineer{})\\
+    &\begin{itemize}
+      \vspace{-5mm}
+      \setlength\itemsep{0em}
+      \item \contione{}
+      \item \contitwo{}
+      \item \contithree{} 
+    \end{itemize}\\
+    02/2017--04/2020& CAE Healthcare (\softwareengineer{})\\
+    &\begin{itemize}
+      \vspace{-5mm}
+      \setlength\itemsep{0em}
+      \item \caeone{}
+      \item \caetwo{}
+    \end{itemize}\\
+  \end{tabular}
+
+%----------------- EDUCATION ---------------------------
+\section*{\textsc{\education{}}}
+    \begin{tabular}{L!{\VRule}R}
+        2017--2019& { \bf \masters{} }\\[3mm]
+        2013--2017& \bachelors{}\\
+    \end{tabular}
+
+%----------- Publication ---------
+\section*{\textsc{\publication{}}}
+G. Benko and Z. Juhasz, GPU implementation of the FastICA algorithm, MIPRO 2019, 42th International Convention on Information and Communication Technology, Electronics and Microelectronics (MIPRO), Opatija, May 20-24, 2019
+
+%------------ Skills --------------
+\section*{\textsc{\skills{}}}
+  \begin{tabular}{L!{\VRule}R}
+    \proglanguages{}& C/C++, Java\\[6mm]
+    \webtech{}& JavaScript, TypeScript, CSS, SCSS, HTML, REST services\\[3mm]
+    \database{}& SQL, PostgreSQL, SQLite\\[3mm]
+    \frameworks{}& Angular, CUDA, Qt\\[3mm]
+    \othertools{}& JIRA, Git, Docker, Azure DevOps, Electron
+  \end{tabular}
+
+%---------- Languages -----------
+\section*{\textsc{\languages{}}}
+  \begin{tabular}{>{\raggedleft}p{0.2\textwidth}l}
+    \hungarian{}:& \levnat{}\\[3mm]
+    \english{}:& \levhi{}\\[3mm]
+    \portuguese{}:& \levmed{}
+  \end{tabular}
+
+\end{document}
