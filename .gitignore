@@ -277,3 +277,6 @@ TSWLatexianTemp*
 
 # PDF files
 *.pdf
+
+# Remove .vscode folder
+.vscode/
