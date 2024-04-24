@@ -9,7 +9,7 @@
 \usepackage{tikz}
 \usepackage[english,magyar,portuguese]{babel}
 \usepackage{mathpazo}
-\usepackage[a4paper, left=2cm, right=2cm, top=0cm, bottom=1cm]{geometry}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
 \usepackage{trimspaces}
 \usepackage{xspace}
 \input{dictionary.tex}
@@ -33,7 +33,6 @@
         \includegraphics[width=#3]{#4}};
     }] {};}
 
-
 \linespread{1.0}
 \pagenumbering{gobble}
 \usepackage[pdftex,
@@ -41,23 +40,26 @@
   pdftitle={Gergely Benko - CV},
   pdfsubject={CV}
 ]{hyperref}
-\title{\bfseries\Huge \name{}\vspace{-16mm}}
+\title{\bfseries\Huge \name{}}
 \date{}
 \begin{document}
-\maketitle
+%----------------- TITLE ------------------------------
+\begin{center}
+   \Huge\textbf{\name{}}\\
+\end{center}
+\vspace{5mm}
 
 %----------------- PERSONAL DETAILS -------------------
 \begin{wrapfigure}[2]{r}{0.2\textwidth}
     \begin{center}
-        \vspace{-40pt}
-        \roundpic[xshift=0.2cm,yshift=-0.5cm]{0.2\textwidth}{0.25\textwidth}{me}
+        \vspace{-48pt}
+        \roundpic[xshift=0.0cm,yshift=0.0cm]{0.21\textwidth}{0.3\textwidth}{me}
     \end{center}
 \end{wrapfigure}
 
 \section*{\textsc{\pdata{}}}
     \begin{tabular}{rl}
-        \textsc{\birthdataheader{}}:& Zirc, \country{}, \birtdate{}\\
-        \textsc{\address{}}:& Veszprém 8200, \country{}\\
+        \textsc{\address{}}:& Budapest, \country{}\\
         \textsc{\phone{}}:& \phonenr{}\\
         \textsc{Email}:& gergely.benko93@gmail.com\\
     \end{tabular}
@@ -65,14 +67,24 @@
 %----------------- WORK EXPERIENCE ----------------------
 \section*{\textsc{\workexp{}}}
   \begin{tabular}{L!{\VRule}R}
-    04/2021--{\present{}}& {\bf One Identity} (\softwareengineer{})\\
+    08/2022--{\present{}}& {\bf SIEMENS Mobility} (\seniorswe{} - C++/Linux)\\
+    &\begin{itemize}
+      \vspace{-5mm}
+      \setlength\itemsep{0em}
+        \item \smitemone{}
+        \item \smitemtwo{}
+        \item \smitemthree{}
+        \item \smitemfour{}
+        \item \smitemfive{}
+    \end{itemize}\\
+    04/2021--07/2022& {One Identity} (\softwareengineer{} - C/C++)\\
     &\begin{itemize}
       \vspace{-5mm}
       \setlength\itemsep{0em}
         \item \oiitemone{}
         \item \oiitemtwo{}
     \end{itemize}\\
-    06/2020--04/2021& Continental (\softwareengineer{})\\
+    06/2020--04/2021& Continental (\softwareengineer{} - Embedded C)\\
     &\begin{itemize}
       \vspace{-5mm}
       \setlength\itemsep{0em}
@@ -80,7 +92,7 @@
       \item \contitwo{}
       \item \contithree{} 
     \end{itemize}\\
-    02/2017--04/2020& CAE Healthcare (\softwareengineer{})\\
+    02/2017--04/2020& CAE Healthcare (\softwareengineer{} - TypeScript/Angular)\\
     &\begin{itemize}
       \vspace{-5mm}
       \setlength\itemsep{0em}
@@ -103,7 +115,7 @@ G. Benko and Z. Juhasz, GPU implementation of the FastICA algorithm, MIPRO 2019,
 %------------ Skills --------------
 \section*{\textsc{\skills{}}}
   \begin{tabular}{L!{\VRule}R}
-    \proglanguages{}& C/C++, Java\\[6mm]
+    \proglanguages{}& C/C++, Python\\[6mm]
     \webtech{}& JavaScript, TypeScript, CSS, SCSS, HTML, REST services\\[3mm]
     \database{}& SQL, PostgreSQL, SQLite\\[3mm]
     \frameworks{}& Angular, CUDA, Qt\\[3mm]
@@ -115,7 +127,7 @@ G. Benko and Z. Juhasz, GPU implementation of the FastICA algorithm, MIPRO 2019,
   \begin{tabular}{>{\raggedleft}p{0.2\textwidth}l}
     \hungarian{}:& \levnat{}\\[3mm]
     \english{}:& \levhi{}\\[3mm]
-    \portuguese{}:& \levmed{}
+    \portuguese{}:& \levhi{}
   \end{tabular}
 
 \end{document}
